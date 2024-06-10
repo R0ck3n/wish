@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Idées de voyages{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Idées de voyages</h1>
+    {% for category, wishes in wishes %}
+    <div class="border border-dark rounded mb-5 w-50">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="bg-dark bg-gradient text-light">{{ category }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for wish in wishes %}
+                    <tr>
+                        <td>
+                            <a href="{{ path('wish_detail', {'id': wish.id}) }}">{{ wish.title }}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

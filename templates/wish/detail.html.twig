@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello WishController!{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+<h1>Détail</h1>
+<h2>{{wish.title}}</h2>
+<em>{{wish.author}}</em>
+<p>{{wish.description}}</p>
+<p>caté : {{ wish.category.name }}</p>
+<strong>{{wish.createdAt|date('d-m-Y')}}</strong>
+
+</div>
+{% endblock %}

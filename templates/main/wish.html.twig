@@ -1,0 +1,12 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ titre}}| {{ parent() }}{% endblock %}
+
+{% block body %}
+<h1>{{titre}}</h1>
+<div class="col-4">
+    <h1>{{film.title}}</h1>
+     <h2>{{film.Annee}}</h2>
+</div>
+{% endblock %}

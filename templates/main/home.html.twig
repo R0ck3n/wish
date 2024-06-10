@@ -1,0 +1,33 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ titre}}| {{ parent() }}{% endblock %}
+
+{% block body %}
+<h1>{{titre}}</h1>
+<div class="col-4">
+{# table>thead>tr>th*3^^tbody>tr>td*3 #}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Annee</th>
+            <th>Realisateur</th>
+            <th>Validation</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for f in films %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{f.title}}</td>
+            <td>{{f.annee}}</td>
+            <td>{{f.realisateur}}</td>
+            <td>{{f.isValid}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

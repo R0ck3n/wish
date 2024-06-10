@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <h1>Register</h1>
+
+    {{ form_errors(registrationForm) }}
+    <div class="mb-5">
+        {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'
+            }) }}
+            {# {{ form_row(registrationForm.agreeTerms) }} #}
+            <div class"d-flex">
+                <button type="submit" class="btn btn-success">S'enregistrer</button>
+                <a class="btn btn-danger {{ app.request.get('_route') == 'main_home' ? 'active' }}" href="{{ path('main_home')}}">Accueil </a>
+            </div>
+        {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}
